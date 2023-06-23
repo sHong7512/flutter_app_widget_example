@@ -2,8 +2,10 @@ package com.example.app_widget_example
 
 import android.appwidget.AppWidgetManager
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.net.Uri
+import android.util.Log
 import android.widget.RemoteViews
 import es.antonborri.home_widget.HomeWidgetBackgroundIntent
 import es.antonborri.home_widget.HomeWidgetLaunchIntent
@@ -30,8 +32,7 @@ class HomeWidgetExampleProvider : HomeWidgetProvider() {
                 setOnClickPendingIntent(R.id.widget_title, backgroundIntent)
 
                 val message = widgetData.getString("message", null)
-                setTextViewText(R.id.widget_message, message
-                        ?: "No Message Set")
+                setTextViewText(R.id.widget_message, message ?: "No Message Set")
                 // Detect App opened via Click inside Flutter
                 val pendingIntentWithData = HomeWidgetLaunchIntent.getActivity(
                         context,

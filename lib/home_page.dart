@@ -86,9 +86,8 @@ class _HomePageState extends State<HomePage> {
       showDialog(
           context: context,
           builder: (buildContext) => AlertDialog(
-                title: Text('App started from HomeScreenWidget'),
-                content: Text('Here is the URI: $uri'),
-              ));
+              title: Text('App started from HomeScreenWidget'),
+              content: Text('Here is the URI: $uri')));
     }
   }
 
